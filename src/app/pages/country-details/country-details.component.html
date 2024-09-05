@@ -1,1 +1,35 @@
-<p>country-details works!</p>
+@if (country){
+  <p-card header="{{ country.commonName }}" styleClass="country-details-card">
+    <ng-template pTemplate="title">
+      {{ country.commonName }}
+    </ng-template>
+    <ng-template pTemplate="subtitle">
+      Country code: {{ country.countryCode }}
+    </ng-template>
+    <p><strong>Official name:</strong> {{ country.officialName }}</p>
+    <p><strong>Region:</strong> {{ country.region }}</p>
+  </p-card>
+<div>
+  <h2>Holidays for {{ country.commonName }}</h2>
+  <div class="year-buttons">
+    <button
+      *ngFor="let year of years"
+      (click)="onYearChange(year)"
+      [class.selected]="year === selectedYear">
+      {{ year }}
+    </button>
+  </div>
+  <div *ngIf="holidays.length > 0; else noHolidays">
+    <ul>
+      <li *ngFor="let holiday of holidays">
+        <strong>{{ holiday.name }}</strong>
+        <p>Date: {{ holiday.date | date }}</p>
+        <p>Type: {{ holiday.types.join(', ') }}</p>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noHolidays>
+    <p>No holidays available for the selected year.</p>
+  </ng-template>
+</div>
+}

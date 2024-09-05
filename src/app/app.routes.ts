@@ -5,5 +5,5 @@ import { CountryDetailsPageComponent } from './pages/country-details/country-det
 
 export const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'country/:code', component: CountryDetailsPageComponent } // Пример маршрута для страницы страны
+  { path: 'country/:countryCode', component: CountryDetailsPageComponent }
 ];

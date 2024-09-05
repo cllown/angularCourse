@@ -1,27 +1,62 @@
-# TestProjectCountry
+Hello!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+# Angular Movie and Country App
 
-## Development server
+## Introduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project is an Angular application that provides functionality for displaying information about movies and countries. It includes features for searching movies and countries, displaying random holidays, and viewing country details.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Country Search:** Search for countries by name.
+- **Holiday Display:** Show holidays for randomly selected countries.
+- **Country Details:** View information about a selected country and holidays for the current year.
+- **Year Switching:** Change the year to view holidays in different years.
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
+    git clone https://github.com/cllown/test-project-country.git
+    cd test-project-country
 
-## Running unit tests
+2. Install dependencies:
+    npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Running and Building
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Run the application in development mode:
+    npm start
 
-## Further help
+    The application will be available at `http://localhost:4200`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. Build the application for production:
+    npm run build
+
+    The build will be created in the `dist/` folder.
+
+## Architecture
+
+The application is built using Angular and includes the following key components:
+
+- **Components**:
+  - `HomePageComponent`: The main page with functionality for searching countries and displaying random holidays.
+  - `CountryDetailsPageComponent`: The page displaying details of the selected country and holidays for the selected year.
+  - `ListboxComponent`: A component for displaying a list of countries with selection functionality.
+
+- **Services**:
+  - `CountryService`: A service for fetching country and holiday data.
+
+- **Models**:
+  - `CountryInfo`: Information about a country.
+  - `Holiday`: Information about holidays.
+
+- **Routing**:
+  - Configured to navigate between the home page and country details page.
+
+## Libraries and Frameworks
+
+- **Angular**: Core framework for building the application.
+- **PrimeNG**: UI component library used for various components like `p-card`, `p-listbox`, etc.
+- **RxJS**: For handling asynchronous operations and data streams.
+- **Nager.Date API**: Provides holiday data used in the application.

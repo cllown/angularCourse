@@ -1,4 +1,4 @@
-export interface Country {
+export interface CountryInfo {
   commonName: 'string';
   officialName: 'string';
   countryCode: 'string';
@@ -17,16 +17,12 @@ export enum HolidayTypes {
   Observance,
 }
 export interface Holiday{
-  "date": "2024-09-05",
-  "localName": "string",
-  "name": "string",
-  "countryCode": "string",
-  "global": true,
-  "counties": [
-    "string"
-  ],
-  "launchYear": 0,
-  "types": [
-    "Public"
-  ]
+  date: "string",
+  localName: "string",
+  name: "string",
+  countryCode: "string",
+  global: "boolean",
+  counties: ["string"],
+  launchYear: "integer",
+  types: ["string"]
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Countries } from '../country.model';
+import { Countries, CountryInfo, Holiday } from '../country.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,13 @@ export class CountryService {
     getCountries():Observable<Countries[]>{
         return this.httpClient.get<Countries[]>(`${this.apiUrl}/AvailableCountries`);
     }
-    getHolidaysForCountry(countryCode : string):Observable<any>{
-      return this.httpClient.get<any>(`${this.apiUrl}/NextPublicHolidays/${countryCode}`);
+    getHolidaysForCountry(countryCode : string):Observable<Holiday[]>{
+      return this.httpClient.get<Holiday[]>(`${this.apiUrl}/NextPublicHolidays/${countryCode}`);
+    }
+    getCountryInfo(countryCode : string):Observable<CountryInfo>{
+      return this.httpClient.get<CountryInfo>(`${this.apiUrl}/CountryInfo/${countryCode}`)
+    }
+    getHolidayInfo(countryCode: string, year : number):Observable<Holiday[]>{
+      return this.httpClient.get<Holiday[]>(`${this.apiUrl}/PublicHolidays/${year}/${countryCode}`)
     }
 }

@@ -1,35 +1,20 @@
-.wrapper{
+.page {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-    li {
-      margin: 5px 0;
-      a {
-        text-decoration: none;
-        color: blue;
-      }
+  align-items: center;
+  flex-direction: column;
+  padding: 250px 30px 30px 30px;
+  &__card {
+    display: flex;
+    max-height: 45px;
+    input{
+      min-width: 300px;
     }
   }
-}
-.random-countries {
-  h3 {
-    margin-top: 20px;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-
-    li {
-      margin: 5px 0;
-    }
+  &__widget{
+    position: absolute;
+    top: 9%;
+    left: 10%;
+    width: 200px;
+    align-items: center;
   }
 }

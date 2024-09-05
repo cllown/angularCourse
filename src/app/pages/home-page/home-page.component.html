@@ -1,9 +1,9 @@
-<div class="wrapper">
-  <div class="card flex justify-content-center">
+<div class="wrapper page">
+  <div class="page__card">
     <input type="text" pInputText formControlName="text" placeholder="Search countries" (input)="onSearch($event)" />
   </div>
-  <app-listbox
+  <app-listbox class="page__listbox"
     [countries]="filteredCountries"
     (countrySelected)="onCountrySelect($event)"></app-listbox>
-  <app-p-card></app-p-card>
+  <app-p-card class="page__widget" [randomCountries]="randomCountries"></app-p-card>
 </div>
