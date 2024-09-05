@@ -1,7 +1,9 @@
-<p-card *ngFor="let randomCountry of randomCountries">
-  <ng-template pTemplate="content">
-    <h3>{{ randomCountry.country }}</h3>
-    <p>Holiday: {{ randomCountry.holiday }}</p>
-    <p>Date: {{ randomCountry.date | date }}</p>
-  </ng-template>
-</p-card>
+@for (randomCountry of randomCountries; track countryCode) {
+  <p-card>
+    <ng-template pTemplate="content">
+      <h3>{{ randomCountry.country }}</h3>
+      <p>Holiday: {{ randomCountry.holiday }}</p>
+      <p>Date: {{ randomCountry.date | date }}</p>
+    </ng-template>
+  </p-card>
+}

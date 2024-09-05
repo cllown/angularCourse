@@ -6,7 +6,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CountryService } from '../../services/country.service';
 import { Countries } from '../../country.model';
 import { ListboxComponent } from '../../components/listbox/listbox.component';
-import { PCardComponent } from "../../components/p-card/p-card.component";
+import { PCardComponent } from '../../components/p-card/p-card.component';
 import { forkJoin, map } from 'rxjs';
 
 @Component({
@@ -17,8 +17,8 @@ import { forkJoin, map } from 'rxjs';
     RouterLink,
     InputTextModule,
     ListboxComponent,
-    PCardComponent
-],
+    PCardComponent,
+  ],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
@@ -50,7 +50,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getCountries(): void {
-    this.countryService.getCountries().subscribe(countries => {
+    this.countryService.getCountries().subscribe((countries) => {
       this.countries = countries;
       this.getRandomCountries();
     });
@@ -58,17 +58,17 @@ export class HomePageComponent implements OnInit {
 
   getRandomCountries(): void {
     const randomCountries = this.getThreeRandomCountries();
-    const holidayRequests = randomCountries.map(country =>
+    const holidayRequests = randomCountries.map((country) =>
       this.countryService.getHolidaysForCountry(country.countryCode).pipe(
-        map(holidays => ({
+        map((holidays) => ({
           country: country.name,
           holiday: holidays[0]?.name || 'No upcoming holidays',
-          date: holidays[0]?.date || 'N/A'
+          date: holidays[0]?.date || 'N/A',
         }))
       )
     );
 
-    forkJoin(holidayRequests).subscribe(results => {
+    forkJoin(holidayRequests).subscribe((results) => {
       this.randomCountries = results;
     });
   }

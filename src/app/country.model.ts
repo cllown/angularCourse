@@ -16,13 +16,13 @@ export enum HolidayTypes {
   Optional,
   Observance,
 }
-export interface Holiday{
-  date: "string",
-  localName: "string",
-  name: "string",
-  countryCode: "string",
-  global: "boolean",
-  counties: ["string"],
-  launchYear: "integer",
-  types: ["string"]
+export interface Holiday {
+  date: 'string';
+  localName: 'string';
+  name: 'string';
+  countryCode: 'string';
+  global: 'boolean';
+  counties: ['string'];
+  launchYear: 'integer';
+  types: ['string'];
 }

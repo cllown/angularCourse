@@ -6,9 +6,5 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, {
-  providers: [
-    provideHttpClient(),
-    provideRouter(routes)
-  ]
-})
-.catch(err => console.error(err));
+  providers: [provideHttpClient(), provideRouter(routes)],
+}).catch((err) => console.error(err));

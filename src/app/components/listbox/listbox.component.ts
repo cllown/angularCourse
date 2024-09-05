@@ -8,17 +8,11 @@ import { Countries } from '../../country.model';
 @Component({
   selector: 'app-listbox',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    ListboxModule,
-    InputTextModule,
-  ],
+  imports: [CommonModule, FormsModule, ListboxModule, InputTextModule],
   templateUrl: './listbox.component.html',
   styleUrl: './listbox.component.scss',
 })
 export class ListboxComponent {
-
   @Input() countries: Countries[] = [];
   @Output() countrySelected = new EventEmitter<Countries>();
 

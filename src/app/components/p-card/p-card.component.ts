@@ -19,5 +19,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './p-card.component.scss',
 })
 export class PCardComponent {
-  @Input() randomCountries:any[] = [];
+  countryCode!: string;
+
+  @Input() randomCountries: any[] = [];
 }

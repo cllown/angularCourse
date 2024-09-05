@@ -1,9 +1,19 @@
 // app.routes.ts
 import { Routes } from '@angular/router';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { CountryDetailsPageComponent } from './pages/country-details/country-details.component';
 
 export const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: 'country/:countryCode', component: CountryDetailsPageComponent }
+  {
+    path: '',
+    loadComponent: () =>
+      import('./pages//home-page/home-page.component').then(
+        (m) => m.HomePageComponent
+      ),
+  },
+  {
+    path: 'country/:countryCode',
+    loadComponent: () =>
+      import('./pages/country-details/country-details.component').then(
+        (m) => m.CountryDetailsPageComponent
+      ),
+  },
 ];

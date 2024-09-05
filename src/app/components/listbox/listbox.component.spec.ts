@@ -8,9 +8,8 @@ describe('ListboxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ListboxComponent]
-    })
-    .compileComponents();
+      imports: [ListboxComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ListboxComponent);
     component = fixture.componentInstance;
