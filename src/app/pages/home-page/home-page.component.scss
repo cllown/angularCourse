@@ -1,0 +1,35 @@
+.wrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      margin: 5px 0;
+      a {
+        text-decoration: none;
+        color: blue;
+      }
+    }
+  }
+}
+.random-countries {
+  h3 {
+    margin-top: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin: 5px 0;
+    }
+  }
+}

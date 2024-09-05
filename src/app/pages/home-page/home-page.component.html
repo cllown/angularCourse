@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <div class="card flex justify-content-center">
+    <input type="text" pInputText formControlName="text" placeholder="Search countries" (input)="onSearch($event)" />
+  </div>
+  <app-listbox
+    [countries]="filteredCountries"
+    (countrySelected)="onCountrySelect($event)"></app-listbox>
+  <app-p-card></app-p-card>
+</div>

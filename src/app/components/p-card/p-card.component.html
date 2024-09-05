@@ -1,0 +1,9 @@
+<p-card *ngFor="let randomCountry of randomCountries" class="p-mb-4">
+  <ng-template pTemplate="header">
+    <h3>{{ randomCountry.country }}</h3>
+  </ng-template>
+  <ng-template pTemplate="content">
+    <p>Свято: {{ randomCountry.holiday.name }}</p>
+    <p>Дата: {{ randomCountry.holiday.date | date }}</p>
+  </ng-template>
+</p-card>
